@@ -1,0 +1,130 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title Smart Room
+    link(rel='stylesheet', href='/stylesheets/mycss.css')
+    //toaster
+    link(rel='stylesheet', href='/toastr/build/toastr.css')
+    // Tell the browser to be responsive to screen width
+    meta(content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no', name='viewport')
+
+    center
+      body
+        .backgroundMiddle
+          .container
+            .screen
+              h2.textWhite(style='font-size: 26px; margin-right: 10px;') Smart  Room 1.0
+              .screen
+                div(style='display: flex; width: fit-content')
+                  h3.textWhite Lamp
+                    button.button#btnLampOn ON
+                    button.button#btnLampOff OFF
+                div(style='display: flex; width: fit-content')
+                  h3.textWhite TV
+                    button.button#btnTvOn ON
+                    button.button#btnTvOff OFF
+                div(style='display: flex; width: fit-content')
+                  h3.textWhite Guitar Amplifler
+                    button.button#btnAmfiOn ON
+                    button.button#btnAmfiOff OFF
+                div(style='display: flex; width: fit-content')
+                  h3.textWhite Speakers
+                    button.button#btnSpeakerOn ON
+                    button.button#btnSpeakerOff OFF
+                //button.button#btnClean(style='margin-top: 30px') CLEAN ALL
+
+    //jquery
+    script(src='https://code.jquery.com/jquery-3.3.1.min.js', integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=', crossorigin='anonymous')
+    //toaster
+    script(src='toastr/toastr.js')
+    script.
+      $('#btnLampOn').click(function (e) {
+        e.preventDefault();
+        var data = {
+          'switchName': "lamp",
+          'state': "true"
+        }
+        $.post('/btn1', data)
+                .done(function (returnValue) {
+                  console.log(returnValue)
+                })
+      })
+      $('#btnLampOff').click(function (e) {
+        e.preventDefault();
+        var data = {
+          'switchName': "lamp",
+          'state': "false"
+        }
+        $.post('/btn1', data)
+                .done(function (returnValue) {
+                  console.log(returnValue)
+                })
+      })
+      $('#btnTvOn').click(function (e) {
+        e.preventDefault();
+        var data = {
+          'switchName': "tv",
+          'state': "true"
+        }
+        $.post('/btn1', data)
+                .done(function (returnValue) {
+                  console.log(returnValue)
+                })
+      })
+      $('#btnTvOff').click(function (e) {
+        e.preventDefault();
+        var data = {
+          'switchName': "tv",
+          'state': "false"
+        }
+        $.post('/btn1', data)
+                .done(function (returnValue) {
+                  console.log(returnValue)
+                })
+      })
+      $('#btnAmfiOn').click(function (e) {
+        e.preventDefault();
+        var data = {
+          'switchName': "amfi",
+          'state': "true"
+        }
+        $.post('/btn1', data)
+                .done(function (returnValue) {
+                  console.log(returnValue)
+                })
+      })
+      $('#btnAmfiOff').click(function (e) {
+        e.preventDefault();
+        var data = {
+          'switchName': "amfi",
+          'state': "false"
+        }
+        $.post('/btn1', data)
+                .done(function (returnValue) {
+                  console.log(returnValue)
+                })
+      })
+      $('#btnSpeakerOn').click(function (e) {
+        e.preventDefault();
+        var data = {
+          'switchName': "speaker",
+          'state': "true"
+        }
+        $.post('/btn1', data)
+                .done(function (returnValue) {
+                  console.log(returnValue)
+                })
+      })
+      $('#btnSpeakerOff').click(function (e) {
+        e.preventDefault();
+        var data = {
+          'switchName': "speaker",
+          'state': "false"
+        }
+        $.post('/btn1', data)
+                .done(function (returnValue) {
+                  console.log(returnValue)
+                })
+      })
